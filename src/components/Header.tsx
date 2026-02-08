@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
-  { href: '#clients', label: 'Our Clients' },
-  { href: '#about', label: 'About' },
-  { href: '#reviews', label: 'Reviews' },
-  { href: '#start-project', label: 'Start Your Project' },
+  { href: '#home', label: 'Home', isAnchor: true },
+  { href: '#services', label: 'Services', isAnchor: true },
+  { href: '#pricing', label: 'Pricing', isAnchor: true },
+  { href: '/portfolio', label: 'Portfolio', isAnchor: false },
+  { href: '#clients', label: 'Our Clients', isAnchor: true },
+  { href: '#about', label: 'About', isAnchor: true },
+  { href: '#reviews', label: 'Reviews', isAnchor: true },
+  { href: '#start-project', label: 'Start Your Project', isAnchor: true },
 ];
 
 const Header = () => {
@@ -41,15 +44,25 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.isAnchor ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
 
           {/* CTA Button */}
@@ -79,16 +92,27 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 animate-fade-in">
             <nav className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-foreground hover:text-primary transition-colors py-2"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.isAnchor ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-foreground hover:text-primary transition-colors py-2"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-foreground hover:text-primary transition-colors py-2"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
