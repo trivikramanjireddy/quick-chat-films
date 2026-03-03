@@ -11,60 +11,79 @@ import {
 } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 
+import brandAdsImg from '@/assets/services/brand-ads.jpg';
+import productLaunchImg from '@/assets/services/product-launch.jpg';
+import foodImg from '@/assets/services/food.jpg';
+import corporateImg from '@/assets/services/corporate.jpg';
+import reelsImg from '@/assets/services/reels.jpg';
+import musicImg from '@/assets/services/music.jpg';
+import weddingImg from '@/assets/services/wedding.jpg';
+import educationImg from '@/assets/services/education.jpg';
+import hospitalityImg from '@/assets/services/hospitality.jpg';
+
 const services = [
   {
     icon: Video,
     title: 'Brand Commercials & Ads',
     description:
       'High-end cinematic advertisements crafted to build strong brand identity and boost visibility across digital and offline platforms.',
+    bgImage: brandAdsImg,
   },
   {
     icon: ShoppingBag,
     title: 'Product Launch & Promo Videos',
     description:
       'Stylish, engaging product videos designed to attract attention and increase conversions for eCommerce and startups.',
+    bgImage: productLaunchImg,
   },
   {
     icon: Utensils,
     title: 'Food & Restaurant Films',
     description:
       'Visually mouth-watering food videos that highlight taste, ambience, and brand personality for restaurants and cafés.',
+    bgImage: foodImg,
   },
   {
     icon: Building2,
     title: 'Corporate Announcements & Events',
     description:
       'Professional coverage for corporate events, launches, and announcements with fast turnaround and premium finish.',
+    bgImage: corporateImg,
   },
   {
     icon: Smartphone,
     title: 'Social Media Reels & Shorts',
     description:
       'Trending, fast-paced vertical videos optimized for Instagram, YouTube Shorts, and Facebook Reels.',
+    bgImage: reelsImg,
   },
   {
     icon: Music,
     title: 'Music & Cover Song Videos',
     description:
       'Creative and cinematic music videos with storytelling visuals and emotional depth.',
+    bgImage: musicImg,
   },
   {
     icon: Heart,
     title: 'Luxury Weddings & Engagement Films',
     description:
       'Elegant, emotional, cinematic wedding films crafted like a movie — timeless and premium.',
+    bgImage: weddingImg,
   },
   {
     icon: GraduationCap,
     title: 'Educational & Training Videos',
     description:
       'Clear, engaging educational videos for institutions, companies, and online platforms.',
+    bgImage: educationImg,
   },
   {
     icon: Building,
     title: 'Hospitality & Real Estate Films',
     description:
       'High-quality walkthroughs and promotional films for hotels, resorts, villas, and real estate projects.',
+    bgImage: hospitalityImg,
   },
 ];
 
@@ -94,6 +113,7 @@ const Services = () => {
               icon={service.icon}
               title={service.title}
               description={service.description}
+              bgImage={service.bgImage}
               index={index}
             />
           ))}
