@@ -1,4 +1,5 @@
-import { MessageCircle, Play } from 'lucide-react';
+import { Play } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
@@ -54,7 +55,7 @@ const Hero = () => {
               href="#start-project"
               className="btn-hero w-full sm:w-auto"
             >
-              <MessageCircle className="w-5 h-5" />
+              <WhatsAppIcon className="w-5 h-5" />
               Start Your Project
             </a>
             <a

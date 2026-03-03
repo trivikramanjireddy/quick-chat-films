@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { MessageCircle, Send, Calendar, IndianRupee } from 'lucide-react';
+import { Send, Calendar, IndianRupee } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -212,7 +213,7 @@ ${formData.requirement || 'Not provided'}
                 Submit via WhatsApp
               </button>
               <p className="text-muted-foreground text-sm mt-4">
-                <MessageCircle className="w-4 h-4 inline mr-1" />
+                <WhatsAppIcon className="w-4 h-4 inline mr-1" />
                 Your details will be sent directly to our WhatsApp
               </p>
             </div>

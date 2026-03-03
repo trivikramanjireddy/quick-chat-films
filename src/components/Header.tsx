@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -73,7 +74,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="btn-hero text-sm px-6 py-3"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
               WhatsApp Us
             </a>
           </div>
@@ -119,7 +120,7 @@ const Header = () => {
                 rel="noopener noreferrer"
                 className="btn-hero text-center mt-4"
               >
-                <MessageCircle className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4" />
                 WhatsApp Us
               </a>
             </nav>

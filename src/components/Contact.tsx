@@ -1,4 +1,5 @@
-import { MessageCircle, Mail, Instagram, Youtube, Facebook, MapPin } from 'lucide-react';
+import { Mail, Instagram, Youtube, Facebook, MapPin } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -26,7 +27,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="btn-hero inline-flex mb-12"
           >
-            <MessageCircle className="w-5 h-5" />
+            <WhatsAppIcon className="w-5 h-5" />
             Chat on WhatsApp
           </a>
 

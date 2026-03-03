@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import pricingMobileImg from '@/assets/pricing-mobile.jpg';
 import pricingCameraImg from '@/assets/pricing-camera.jpg';
 import pricingDroneImg from '@/assets/pricing-drone.jpg';
@@ -79,7 +79,7 @@ const PricingCard = ({
           rel="noopener noreferrer"
           className="btn-hero w-full justify-center"
         >
-          <MessageCircle className="w-5 h-5" />
+          <WhatsAppIcon className="w-5 h-5" />
           {ctaText}
         </a>
       </div>
@@ -198,7 +198,7 @@ const Pricing = () => {
               rel="noopener noreferrer"
               className="btn-hero inline-flex"
             >
-              <MessageCircle className="w-5 h-5" />
+              <WhatsAppIcon className="w-5 h-5" />
               Discuss on WhatsApp
             </a>
           </div>

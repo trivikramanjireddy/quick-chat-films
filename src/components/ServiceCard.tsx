@@ -1,4 +1,5 @@
-import { MessageCircle, LucideIcon } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -39,7 +40,7 @@ const ServiceCard = ({ icon: Icon, title, description, index }: ServiceCardProps
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all duration-300"
       >
-        <MessageCircle className="w-4 h-4" />
+        <WhatsAppIcon className="w-4 h-4" />
         Enquire on WhatsApp
       </a>
     </div>
