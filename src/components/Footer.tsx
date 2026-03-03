@@ -1,4 +1,5 @@
-import { MessageCircle, Instagram, Youtube, Facebook, ChevronUp } from 'lucide-react';
+import { Instagram, Youtube, Facebook, ChevronUp } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -37,7 +38,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="btn-outline-cine inline-flex text-sm"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
               WhatsApp Us
             </a>
           </div>

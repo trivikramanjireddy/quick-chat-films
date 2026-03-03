@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MessageCircle, ArrowLeft, Play, X } from 'lucide-react';
+import { ArrowLeft, Play, X } from 'lucide-react';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 import brandAdsImg from '@/assets/portfolio/brand-ads.jpg';
 import foodImg from '@/assets/portfolio/food.jpg';
 import reelsImg from '@/assets/portfolio/reels.jpg';
@@ -75,7 +76,7 @@ const Portfolio = () => {
               rel="noopener noreferrer"
               className="btn-hero text-sm px-4 py-2 md:px-6 md:py-3"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span className="hidden sm:inline">Start Your Project</span>
               <span className="sm:hidden">WhatsApp</span>
             </a>
@@ -169,7 +170,7 @@ const Portfolio = () => {
               rel="noopener noreferrer"
               className="btn-hero inline-flex"
             >
-              <MessageCircle className="w-5 h-5" />
+              <WhatsAppIcon className="w-5 h-5" />
               Start Your Project on WhatsApp
             </a>
           </div>

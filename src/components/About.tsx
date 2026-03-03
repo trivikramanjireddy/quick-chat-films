@@ -1,4 +1,5 @@
-import { MessageCircle, Award, Clock, Users } from 'lucide-react';
+import { Award, Clock, Users } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -38,7 +39,7 @@ const About = () => {
               rel="noopener noreferrer"
               className="btn-hero inline-flex"
             >
-              <MessageCircle className="w-5 h-5" />
+              <WhatsAppIcon className="w-5 h-5" />
               Talk to Us on WhatsApp
             </a>
           </div>
