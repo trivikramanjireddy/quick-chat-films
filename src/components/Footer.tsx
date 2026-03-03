@@ -1,5 +1,6 @@
 import { Instagram, Youtube, Facebook, ChevronUp } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import footerLogo from '@/assets/footer-logo.png';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -24,9 +25,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#home" className="inline-block mb-4">
-              <span className="font-display text-3xl tracking-wider text-foreground">
-                CINE<span className="text-primary">QUICK</span>
-              </span>
+              <img src={footerLogo} alt="CineQuick" className="h-10" />
             </a>
             <p className="text-muted-foreground max-w-md mb-6">
               Premium video production studio delivering cinematic visuals with speed and

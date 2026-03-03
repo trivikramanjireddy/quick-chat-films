@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import headerLogo from '@/assets/header-logo.png';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -38,9 +39,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <span className="font-display text-3xl md:text-4xl tracking-wider text-foreground">
-              CINE<span className="text-primary">QUICK</span>
-            </span>
+            <img src={headerLogo} alt="CineQuick" className="h-10 md:h-12" />
           </a>
 
           {/* Desktop Navigation */}
