@@ -9,7 +9,7 @@ const WHATSAPP_LINK = 'https://wa.me/919493668321';
 const navLinks = [
   { href: '#home', label: 'Home', isAnchor: true },
   { href: '#services', label: 'Services', isAnchor: true },
-  { href: '#pricing', label: 'Pricing', isAnchor: true },
+  { href: '/pricing', label: 'Pricing', isAnchor: false },
   { href: '/portfolio', label: 'Portfolio', isAnchor: false },
   { href: '#clients', label: 'Our Clients', isAnchor: true },
   { href: '#about', label: 'About', isAnchor: true },
