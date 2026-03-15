@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Quote } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -78,6 +78,46 @@ const reviews = [
   },
 ];
 
+const ReviewCard = ({ review, isCenter }: { review: typeof reviews[0]; isCenter: boolean }) => (
+  <div
+    className={`rounded-2xl border transition-all duration-500 ease-out flex flex-col items-center ${
+      isCenter
+        ? 'bg-card border-primary/30 shadow-[0_0_40px_hsl(var(--primary)/0.15)] scale-100 p-8 md:p-10'
+        : 'bg-card/60 border-border/50 scale-[0.88] opacity-70 p-6 md:p-8'
+    }`}
+  >
+    {/* Avatar */}
+    <div
+      className={`rounded-full flex items-center justify-center border-4 border-card shrink-0 transition-all duration-500 mb-4 ${
+        isCenter ? 'w-16 h-16 bg-primary/20' : 'w-12 h-12 bg-primary/10'
+      }`}
+    >
+      <span className={`text-primary font-bold ${isCenter ? 'text-xl' : 'text-sm'}`}>
+        {review.initials}
+      </span>
+    </div>
+
+    {/* Name */}
+    <h3 className={`font-display text-center text-foreground tracking-wide mb-1 ${isCenter ? 'text-lg' : 'text-base'}`}>
+      {review.name.toUpperCase()}
+    </h3>
+
+    {/* Role */}
+    <p className="text-muted-foreground text-xs text-center mb-4">{review.role}</p>
+
+    {/* Quote & content */}
+    <div className="relative flex-1 flex flex-col">
+      <Quote className="w-6 h-6 text-primary/40 mb-2 rotate-180 shrink-0" />
+      <p className={`text-foreground/80 text-center leading-relaxed flex-1 ${isCenter ? 'text-sm' : 'text-xs'}`}>
+        "{review.content}"
+      </p>
+      <div className="flex justify-end mt-2">
+        <Quote className="w-6 h-6 text-primary/40 shrink-0" />
+      </div>
+    </div>
+  </div>
+);
+
 const Reviews = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -85,6 +125,7 @@ const Reviews = () => {
       loop: true,
       align: 'center',
       slidesToScroll: 1,
+      containScroll: false,
     },
     [Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]
   );
@@ -118,9 +159,6 @@ const Reviews = () => {
           <div className="flex">
             {reviews.map((review, index) => {
               const isCenter = index === selectedIndex;
-              const isAdjacent =
-                index === (selectedIndex - 1 + reviews.length) % reviews.length ||
-                index === (selectedIndex + 1) % reviews.length;
 
               return (
                 <div
@@ -128,64 +166,10 @@ const Reviews = () => {
                   className="flex-shrink-0 px-3 transition-all duration-500 ease-out"
                   style={{
                     flexBasis: isCenter ? '40%' : '30%',
-                    minWidth: isCenter ? '40%' : '30%',
+                    minWidth: isCenter ? '320px' : '260px',
                   }}
                 >
-                  <div
-                    className={`relative rounded-2xl border transition-all duration-500 ease-out ${
-                      isCenter
-                        ? 'bg-card border-primary/30 shadow-[0_0_40px_rgba(255,140,0,0.1)] scale-100 py-10 px-8'
-                        : 'bg-card/60 border-border/50 scale-90 opacity-70 py-8 px-6'
-                    }`}
-                  >
-                    {/* Avatar */}
-                    <div className="flex justify-center -mt-14 mb-4">
-                      <div
-                        className={`rounded-full flex items-center justify-center border-4 border-card transition-all duration-500 ${
-                          isCenter
-                            ? 'w-20 h-20 bg-primary/20'
-                            : 'w-16 h-16 bg-primary/10'
-                        }`}
-                      >
-                        <span
-                          className={`text-primary font-bold ${
-                            isCenter ? 'text-2xl' : 'text-lg'
-                          }`}
-                        >
-                          {review.initials}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Name */}
-                    <h3
-                      className={`font-display text-center text-foreground tracking-wide mb-4 ${
-                        isCenter ? 'text-xl' : 'text-lg'
-                      }`}
-                    >
-                      {review.name.toUpperCase()}
-                    </h3>
-
-                    {/* Quote marks & content */}
-                    <div className="relative">
-                      <Quote className="w-8 h-8 text-primary/40 mb-2 rotate-180" />
-                      <p
-                        className={`text-foreground/80 text-center leading-relaxed ${
-                          isCenter ? 'text-base' : 'text-sm'
-                        }`}
-                      >
-                        "{review.content}"
-                      </p>
-                      <div className="flex justify-end mt-2">
-                        <Quote className="w-8 h-8 text-primary/40" />
-                      </div>
-                    </div>
-
-                    {/* Role */}
-                    <p className="text-muted-foreground text-xs text-center mt-2">
-                      {review.role}
-                    </p>
-                  </div>
+                  <ReviewCard review={review} isCenter={isCenter} />
                 </div>
               );
             })}
