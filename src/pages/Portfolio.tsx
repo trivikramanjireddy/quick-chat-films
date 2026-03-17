@@ -193,22 +193,33 @@ const Portfolio = () => {
             className="relative max-w-4xl w-full aspect-video rounded-xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={selectedItem.image}
-              alt={selectedItem.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center mx-auto mb-4">
-                  <Play className="w-10 h-10 text-primary-foreground ml-1" />
+            {selectedItem.videoUrl ? (
+              <iframe
+                src={selectedItem.videoUrl}
+                className="w-full h-full"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            ) : (
+              <>
+                <img
+                  src={selectedItem.image}
+                  alt={selectedItem.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                  <div className="text-center">
+                    <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center mx-auto mb-4">
+                      <Play className="w-10 h-10 text-primary-foreground ml-1" />
+                    </div>
+                    <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2">
+                      {selectedItem.title}
+                    </h3>
+                    <p className="text-muted-foreground">Video coming soon</p>
+                  </div>
                 </div>
-                <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2">
-                  {selectedItem.title}
-                </h3>
-                <p className="text-muted-foreground">Video coming soon</p>
-              </div>
-            </div>
+              </>
+            )}
           </div>
         </div>
       )}
