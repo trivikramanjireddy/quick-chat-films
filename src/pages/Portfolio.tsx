@@ -33,7 +33,7 @@ const categories: { value: Category; label: string }[] = [
 ];
 
 const portfolioItems: PortfolioItem[] = [
-  { id: 1, title: 'Premium Brand Commercial', category: 'brand-ads', image: 'https://drive.google.com/thumbnail?id=1MuPfqiK0b2H3jDJCzyKmayKvGQ4uKBFw&sz=w800', videoUrl: 'https://drive.google.com/file/d/1MuPfqiK0b2H3jDJCzyKmayKvGQ4uKBFw/preview' },
+  { id: 1, title: 'Alankar Make-up Studio - Official Brand Film', category: 'brand-ads', image: 'https://drive.google.com/thumbnail?id=1MuPfqiK0b2H3jDJCzyKmayKvGQ4uKBFw&sz=w800', videoUrl: 'https://drive.google.com/file/d/1MuPfqiK0b2H3jDJCzyKmayKvGQ4uKBFw/preview' },
   { id: 2, title: 'Fine Dining Experience', category: 'food', image: foodImg },
   { id: 3, title: 'Viral Instagram Reels', category: 'reels', image: reelsImg },
   { id: 4, title: 'Royal Wedding Film', category: 'weddings', image: weddingsImg },
