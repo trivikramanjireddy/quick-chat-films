@@ -45,7 +45,7 @@ const Clients = () => {
               <img
                 src={client.src}
                 alt={client.name}
-                className="max-w-full max-h-16 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
+                className="max-w-full max-h-16 object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}
