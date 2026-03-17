@@ -1,22 +1,29 @@
+import samsonite from '@/assets/clients/samsonite.png';
+import arokya from '@/assets/clients/arokya.png';
+import relianceJewels from '@/assets/clients/reliance-jewels.png';
+import ponds from '@/assets/clients/ponds.png';
+import continental from '@/assets/clients/continental.png';
+import mythri from '@/assets/clients/mythri.png';
+import jiohotstar from '@/assets/clients/jiohotstar.png';
+import netflix from '@/assets/clients/netflix.png';
+
 const clientLogos = [
-  { name: 'Client 1', placeholder: 'Brand A' },
-  { name: 'Client 2', placeholder: 'Brand B' },
-  { name: 'Client 3', placeholder: 'Brand C' },
-  { name: 'Client 4', placeholder: 'Brand D' },
-  { name: 'Client 5', placeholder: 'Brand E' },
-  { name: 'Client 6', placeholder: 'Brand F' },
-  { name: 'Client 7', placeholder: 'Brand G' },
-  { name: 'Client 8', placeholder: 'Brand H' },
+  { name: 'Samsonite', src: samsonite },
+  { name: 'Arokya', src: arokya },
+  { name: 'Reliance Jewels', src: relianceJewels },
+  { name: "Pond's", src: ponds },
+  { name: 'Continental Malgudi', src: continental },
+  { name: 'Mythri Movie Makers', src: mythri },
+  { name: 'JioHotstar', src: jiohotstar },
+  { name: 'Netflix', src: netflix },
 ];
 
 const Clients = () => {
-  // Duplicate logos for seamless infinite scroll
   const duplicatedLogos = [...clientLogos, ...clientLogos];
 
   return (
     <section id="clients" className="section-cine bg-cine-dark overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 mb-12">
-        {/* Section Header */}
         <div className="text-center">
           <span className="text-primary font-medium text-sm uppercase tracking-widest mb-4 block">
             Our Partners
@@ -33,20 +40,17 @@ const Clients = () => {
           {duplicatedLogos.map((client, index) => (
             <div
               key={`${client.name}-${index}`}
-              className="flex-shrink-0 w-40 h-20 rounded-lg bg-secondary/50 border border-border flex items-center justify-center hover:border-primary/50 transition-colors"
+              className="flex-shrink-0 w-48 h-24 rounded-lg bg-secondary/30 border border-border/50 flex items-center justify-center hover:border-primary/50 transition-colors px-4"
             >
-              <span className="text-muted-foreground font-medium text-sm">
-                {client.placeholder}
-              </span>
+              <img
+                src={client.src}
+                alt={client.name}
+                className="max-w-full max-h-16 object-contain brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
+              />
             </div>
           ))}
         </div>
       </div>
-
-      {/* Note for user */}
-      <p className="text-center text-muted-foreground/50 text-xs mt-8">
-        Replace with your actual client logos (JPG format)
-      </p>
     </section>
   );
 };
