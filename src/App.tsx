@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
 import PricingPage from "./pages/PricingPage";
 import NotFound from "./pages/NotFound";
+import SmoothScroll from "./components/SmoothScroll";
 
 const queryClient = new QueryClient();
 
