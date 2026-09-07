@@ -25,6 +25,7 @@ const Index = () => {
         <Audience />
         <Services />
         <ProcessTimeline />
+        <Equipment />
         <Clients />
         <About />
         <Reviews />
