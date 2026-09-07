@@ -27,14 +27,14 @@ const Index = () => {
         <ProcessTimeline />
         <Equipment />
         <PricingStory />
-        <WhyChoose />
-        <FAQ />
-        <BookShoot />
         <Clients />
         <About />
+        <WhyChoose />
         <Reviews />
         <OnSets />
+        <FAQ />
         <ProjectForm />
+        <BookShoot />
         <Contact />
       </main>
       <Footer />
