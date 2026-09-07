@@ -90,7 +90,7 @@ const services = [
 const Services = () => {
   return (
     <section id="services" className="section-cine bg-background">
-      <div className="container mx-auto px-4 md:px-6">
+      <div data-reveal className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-primary font-medium text-sm uppercase tracking-widest mb-4 block">

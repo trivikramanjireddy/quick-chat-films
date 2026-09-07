@@ -23,7 +23,7 @@ const Clients = () => {
 
   return (
     <section id="clients" className="section-cine bg-cine-dark overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 mb-12">
+      <div data-reveal className="container mx-auto px-4 md:px-6 mb-12">
         <div className="text-center">
           <span className="text-primary font-medium text-sm uppercase tracking-widest mb-4 block">
             Our Partners

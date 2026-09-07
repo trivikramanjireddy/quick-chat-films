@@ -12,7 +12,7 @@ const stats = [
 const About = () => {
   return (
     <section id="about" className="section-cine bg-background">
-      <div className="container mx-auto px-4 md:px-6">
+      <div data-reveal className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div>
