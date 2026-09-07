@@ -24,8 +24,6 @@ const Index = () => {
         <CinematicHero />
         <Audience />
         <Services />
-        <ProcessTimeline />
-        <Equipment />
         <Clients />
         <About />
         <Reviews />
