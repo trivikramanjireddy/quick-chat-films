@@ -24,23 +24,18 @@ const GearLayer = ({
   index: number;
   progress: ReturnType<typeof useScroll>['scrollYProgress'];
 }) => {
-  const start = index / gear.length;
-  const end = (index + 1) / gear.length;
-  const pad = 0.08;
+  const n = gear.length;
+  const start = Math.max(0, index / n - 0.05);
+  const mid = (index + 0.5) / n;
+  const end = Math.min(1, (index + 1) / n + 0.05);
 
-  const opacity = useTransform(
-    progress,
-    [start - pad, start + pad, end - pad, end + pad],
-    [0, 1, 1, 0]
-  );
-  const scale = useTransform(progress, [start - pad, end + pad], [0.82, 1.12]);
-  const rotate = useTransform(progress, [start - pad, end + pad], [-8, 8]);
-  const blur = useTransform(opacity, [0, 1], [14, 0]);
-  const filter = useTransform(blur, (b) => `blur(${b}px)`);
+  const opacity = useTransform(progress, [start, mid - 0.06, mid + 0.06, end], [0, 1, 1, 0]);
+  const scale = useTransform(progress, [start, end], [0.85, 1.1]);
+  const rotate = useTransform(progress, [start, end], [-6, 6]);
 
   return (
     <motion.div
-      style={{ opacity, scale, rotate, filter }}
+      style={{ opacity, scale, rotate }}
       className="absolute inset-0 flex flex-col items-center justify-center"
     >
       <img src={src} alt={label} loading="lazy" className="max-h-[52vh] w-auto rounded-3xl" />
