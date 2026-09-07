@@ -22,19 +22,12 @@ const Index = () => {
       <Header />
       <main>
         <CinematicHero />
-        <Audience />
         <Services />
-        <ProcessTimeline />
-        <Equipment />
-        <PricingStory />
         <Clients />
         <About />
-        <WhyChoose />
         <Reviews />
         <OnSets />
-        <FAQ />
         <ProjectForm />
-        <BookShoot />
         <Contact />
       </main>
       <Footer />
