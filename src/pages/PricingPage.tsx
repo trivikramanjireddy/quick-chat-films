@@ -1,13 +1,13 @@
 import Header from '@/components/Header';
-import Pricing from '@/components/Pricing';
+import PricingCinematic from '@/components/pricing/PricingCinematic';
 import Footer from '@/components/Footer';
 
 const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20">
-        <Pricing />
+      <main>
+        <PricingCinematic />
       </main>
       <Footer />
     </div>
