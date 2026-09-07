@@ -6,7 +6,7 @@ const WHATSAPP_LINK = 'https://wa.me/919493668321';
 const Contact = () => {
   return (
     <section id="contact" className="section-cine bg-cine-dark">
-      <div className="container mx-auto px-4 md:px-6">
+      <div data-reveal className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* Section Header */}
           <span className="text-primary font-medium text-sm uppercase tracking-widest mb-4 block">

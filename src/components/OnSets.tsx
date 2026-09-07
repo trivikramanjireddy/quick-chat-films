@@ -102,7 +102,7 @@ const MarqueeRow = ({
 const OnSets = () => {
   return (
     <section id="on-sets" className="section-cine bg-background overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 mb-12">
+      <div data-reveal className="container mx-auto px-4 md:px-6 mb-12">
         <div className="text-center">
           <span className="text-primary font-medium text-sm uppercase tracking-widest mb-4 block">
             Behind The Scenes
