@@ -26,6 +26,10 @@ const Index = () => {
         <Services />
         <ProcessTimeline />
         <Equipment />
+        <PricingStory />
+        <WhyChoose />
+        <FAQ />
+        <BookShoot />
         <Clients />
         <About />
         <Reviews />
