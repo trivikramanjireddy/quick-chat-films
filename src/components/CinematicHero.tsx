@@ -1,102 +1,216 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from './fx/MagneticButton';
 import WhatsAppIcon from './WhatsAppIcon';
-import logo from '@/assets/header-logo.png';
-import heroBg from '@/assets/hero-bg.jpg';
+import alluArjunAsset from '@/assets/hero-collage/AlluArjun.webp.asset.json';
+import hanumanMakingAsset from '@/assets/hero-collage/Hanuman_Making.webp.asset.json';
+import editingAsset from '@/assets/hero-collage/IMG_5522_Original.jpg.asset.json';
+import setReviewAsset from '@/assets/hero-collage/IMG_5842_Original.jpg.asset.json';
+import nightEditAsset from '@/assets/hero-collage/IMG_7048.webp.asset.json';
+import karthikAsset from '@/assets/hero-collage/Karthik_Prashanth_Varma_Nitayamenon.webp.asset.json';
+import maniSharmaAsset from '@/assets/hero-collage/ManiSharma_Garu.webp.asset.json';
+import sandeepAsset from '@/assets/hero-collage/Sandeep_Madhav.jpg.asset.json';
+import sudeerAsset from '@/assets/hero-collage/Sudeer_YashMaster.webp.asset.json';
+import suhashAsset from '@/assets/hero-collage/Suhash_BTS.webp.asset.json';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
-const WHATSAPP = 'https://wa.me/919493668321?text=' + encodeURIComponent("Hi! I'd like to book a shoot with CineQuick.");
+const WHATSAPP =
+  'https://wa.me/919493668321?text=' +
+  encodeURIComponent("Hi CineQuick! I'd like to discuss a cinematic content project.");
+
+const collage = [
+  {
+    src: alluArjunAsset.url,
+    alt: 'CineQuick filming a behind-the-scenes production',
+    className: 'left-[2%] top-[13%] h-[24%] w-[25%] sm:left-[3%] sm:top-[10%] sm:h-[28%] sm:w-[22%] lg:left-[5%] lg:h-[31%] lg:w-[23%]',
+    drift: -10,
+    parallax: -52,
+  },
+  {
+    src: nightEditAsset.url,
+    alt: 'Professional cinema camera setup on location',
+    className: 'right-[3%] top-[11%] h-[21%] w-[26%] sm:right-[4%] sm:h-[29%] sm:w-[21%] lg:right-[7%] lg:w-[24%]',
+    drift: 12,
+    parallax: -34,
+  },
+  {
+    src: editingAsset.url,
+    alt: 'CineQuick team working with film talent',
+    className: 'bottom-[7%] left-[3%] h-[24%] w-[29%] sm:bottom-[8%] sm:left-[7%] sm:h-[28%] sm:w-[24%] lg:w-[27%]',
+    drift: 9,
+    parallax: 44,
+  },
+  {
+    src: suhashAsset.url,
+    alt: 'CineQuick production crew preparing a shot',
+    className: 'bottom-[6%] right-[3%] h-[25%] w-[27%] sm:bottom-[9%] sm:right-[7%] sm:h-[27%] sm:w-[23%] lg:w-[26%]',
+    drift: -12,
+    parallax: 58,
+  },
+  {
+    src: hanumanMakingAsset.url,
+    alt: 'Camera operator capturing a cinematic scene',
+    className: 'hidden sm:block left-[27%] top-[4%] h-[19%] w-[16%] lg:left-[30%] lg:h-[22%] lg:w-[17%]',
+    drift: 7,
+    parallax: -70,
+  },
+  {
+    src: karthikAsset.url,
+    alt: 'Behind-the-scenes direction during a CineQuick shoot',
+    className: 'hidden sm:block right-[25%] top-[3%] h-[18%] w-[15%] lg:right-[29%] lg:h-[21%] lg:w-[16%]',
+    drift: -8,
+    parallax: -62,
+  },
+  {
+    src: setReviewAsset.url,
+    alt: 'On-set production moment captured by CineQuick',
+    className: 'hidden sm:block bottom-[3%] left-[32%] h-[18%] w-[14%] lg:left-[34%] lg:h-[20%] lg:w-[15%]',
+    drift: -7,
+    parallax: 76,
+  },
+  {
+    src: maniSharmaAsset.url,
+    alt: 'CineQuick creators collaborating on set',
+    className: 'hidden sm:block bottom-[2%] right-[30%] h-[19%] w-[15%] lg:right-[32%] lg:h-[21%] lg:w-[16%]',
+    drift: 8,
+    parallax: 68,
+  },
+  {
+    src: sandeepAsset.url,
+    alt: 'Production crew planning a scene on location',
+    className: 'hidden lg:block left-[1%] top-[46%] h-[18%] w-[15%]',
+    drift: 6,
+    parallax: 28,
+  },
+  {
+    src: sudeerAsset.url,
+    alt: 'CineQuick creators together after production',
+    className: 'hidden lg:block right-[1%] top-[45%] h-[18%] w-[15%]',
+    drift: -6,
+    parallax: 24,
+  },
+];
+
+const CollageFrame = ({
+  item,
+  index,
+  progress,
+  reduceMotion,
+}: {
+  item: (typeof collage)[number];
+  index: number;
+  progress: ReturnType<typeof useScroll>['scrollYProgress'];
+  reduceMotion: boolean | null;
+}) => {
+  const scrollY = useTransform(progress, [0, 1], [0, reduceMotion ? 0 : item.parallax]);
+
+  return (
+    <motion.figure
+      style={{ y: scrollY }}
+      className={`absolute overflow-hidden rounded-md border border-foreground/10 bg-card shadow-2xl ${item.className}`}
+      initial={{ opacity: 0, scale: 0.86, y: 24 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1.2, delay: 0.08 * index, ease: EASE }}
+    >
+      <motion.div
+        className="h-full w-full"
+        animate={reduceMotion ? undefined : { y: [0, item.drift, 0], rotate: [0, index % 2 ? 0.5 : -0.5, 0] }}
+        transition={{ duration: 8 + index * 0.7, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <img
+          src={item.src}
+          alt={item.alt}
+          className="h-full w-full object-cover saturate-[0.88]"
+          loading={index < 4 ? 'eager' : 'lazy'}
+          fetchPriority={index < 2 ? 'high' : 'auto'}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/10" />
+      </motion.div>
+    </motion.figure>
+  );
+};
 
 const CinematicHero = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-
-  const lensX = useTransform(scrollYProgress, [0, 1], ['0%', '-38%']);
-  const lensRotate = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const lensScale = useTransform(scrollYProgress, [0, 1], [1, 1.35]);
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-60%']);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1.1, 1.3]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : -54]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
     <section
       id="home"
       ref={ref}
-      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden grain-overlay"
+      aria-labelledby="hero-title"
+      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-background pt-20 grain-overlay"
     >
-      <motion.div
-        style={{ scale: bgScale, backgroundImage: `url(${heroBg})` }}
-        className="absolute inset-0 bg-cover bg-center opacity-[0.18]"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background" />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
 
-      {/* Rotating camera lens */}
+      <div aria-hidden className="absolute inset-0">
+        {collage.map((item, index) => (
+          <CollageFrame
+            key={item.src}
+            item={item}
+            index={index}
+            progress={scrollYProgress}
+            reduceMotion={reduceMotion}
+          />
+        ))}
+      </div>
+
       <motion.div
-        style={{ x: lensX, rotate: lensRotate, scale: lensScale }}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[110vmin] w-[110vmin] -translate-x-1/2 -translate-y-1/2"
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative z-10 mx-auto w-full max-w-4xl px-5 py-28 text-center sm:px-8"
       >
-        <div className="absolute inset-0 rounded-full border border-primary/15" />
-        <div className="absolute inset-[9%] rounded-full border border-white/5" />
-        <div className="absolute inset-[22%] rounded-full border border-primary/25 [mask-image:conic-gradient(from_0deg,transparent_0deg,black_65deg,transparent_150deg)]" />
-        <div className="absolute inset-[38%] rounded-full border border-white/5" />
-        <div className="absolute inset-[46%] rounded-full bg-primary/15 blur-3xl" />
-      </motion.div>
+        <motion.p
+          className="mx-auto mb-5 max-w-2xl text-xs font-semibold uppercase text-primary sm:text-sm"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: EASE }}
+        >
+          INDIA&apos;S FASTEST CINEMATIC CONTENT CREATION TEAM
+        </motion.p>
 
-      {/* Orange light streak sweeping across */}
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-primary/20 to-transparent blur-2xl"
-        animate={{ x: ['-60vw', '160vw'] }}
-        transition={{ duration: 7, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' }}
-      />
-
-      <motion.div
-        style={{ y: textY, opacity: textOpacity }}
-        className="container relative z-10 mx-auto px-4 text-center md:px-6"
-      >
-        <motion.img
-          src={logo}
-          alt="CineQuick"
-          className="mx-auto mb-10 h-12 w-auto md:h-16"
-          initial={{ opacity: 0, scale: 0.9, filter: 'blur(12px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 1.3, ease: EASE, delay: 0.1 }}
-        />
-
-        <h1 className="font-display text-5xl leading-[0.95] sm:text-6xl md:text-8xl">
-          {['CINEMATIC CONTENT', 'THAT SELLS'].map((line, i) => (
-            <span key={line} className="block overflow-hidden">
-              <motion.span
-                className={i ? 'inline-block text-gradient-orange' : 'inline-block'}
-                initial={{ y: '110%' }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1.1, ease: EASE, delay: 0.5 + i * 0.15 }}
-              >
-                {line}
-              </motion.span>
-            </span>
-          ))}
+        <h1 id="hero-title" className="font-display text-5xl leading-[0.92] sm:text-7xl lg:text-8xl">
+          <span className="block overflow-hidden">
+            <motion.span
+              className="inline-block"
+              initial={{ y: '110%' }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, delay: 0.45, ease: EASE }}
+            >
+              SHOOT. EDIT. DELIVER.
+            </motion.span>
+          </span>
+          <span className="block overflow-hidden">
+            <motion.span
+              className="inline-block text-gradient-orange"
+              initial={{ y: '110%' }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, delay: 0.58, ease: EASE }}
+            >
+              ALL IN ONE DAY.
+            </motion.span>
+          </span>
         </h1>
 
         <motion.p
-          className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground md:text-lg"
-          initial={{ opacity: 0, y: 24 }}
+          className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-foreground/75 sm:text-base md:text-lg"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: EASE, delay: 0.95 }}
+          transition={{ duration: 0.9, delay: 0.78, ease: EASE }}
         >
-          We create premium short videos, reels, ads, and cinematic content for brands,
-          businesses, creators and events.
+          From cinematic reels and commercials to podcasts and event coverage, we create content that gets attention.
         </motion.p>
 
         <motion.div
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-          initial={{ opacity: 0, y: 24 }}
+          className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: EASE, delay: 1.15 }}
+          transition={{ duration: 0.9, delay: 0.92, ease: EASE }}
         >
-          <MagneticButton href="/pricing" className="btn-hero w-full sm:w-auto">
-            View Pricing
+          <MagneticButton href="/portfolio" className="btn-hero w-full sm:w-auto">
+            View Our Work
           </MagneticButton>
           <MagneticButton
             href={WHATSAPP}
@@ -105,16 +219,17 @@ const CinematicHero = () => {
             className="btn-outline-cine w-full sm:w-auto"
           >
             <WhatsAppIcon className="h-5 w-5" />
-            Book A Shoot
+            WhatsApp Us
           </MagneticButton>
         </motion.div>
       </motion.div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-muted-foreground/30 p-2">
-          <div className="h-2 w-1 rounded-full bg-primary" />
-        </div>
-      </div>
+      <motion.div
+        aria-hidden
+        className="absolute bottom-5 left-1/2 z-10 h-8 w-px bg-gradient-to-b from-primary to-transparent"
+        animate={reduceMotion ? undefined : { scaleY: [0.45, 1, 0.45], opacity: [0.35, 1, 0.35] }}
+        transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+      />
     </section>
   );
 };
