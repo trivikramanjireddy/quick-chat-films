@@ -48,8 +48,8 @@ const Header = () => {
             aria-label="Chat with CineQuick on WhatsApp"
           >
             <WhatsAppIcon className="h-4 w-4" />
-            <span className="hidden xs:inline">WhatsApp Us</span>
-            <span className="xs:hidden">WhatsApp</span>
+            <span className="hidden sm:inline">WhatsApp Us</span>
+            <span className="sm:hidden">WhatsApp</span>
           </a>
         </div>
       </div>
