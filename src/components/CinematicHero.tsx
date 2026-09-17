@@ -2,14 +2,16 @@ import { useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from './fx/MagneticButton';
 import WhatsAppIcon from './WhatsAppIcon';
-import alluArjun from '@/assets/on-sets/allu-arjun.png';
-import alluArjunBts from '@/assets/on-sets/allu-arjun-bts.png';
-import hanumanMaking from '@/assets/on-sets/hanuman-making.png';
-import karthikPrashanth from '@/assets/on-sets/karthik-prashanth.png';
-import makingWithAa from '@/assets/on-sets/making-with-aa.png';
-import ragavendaravBts from '@/assets/on-sets/ragavendarav-bts.png';
-import sudeerYashmaster from '@/assets/on-sets/sudeer-yashmaster.png';
-import suhashBts from '@/assets/on-sets/suhash-bts.png';
+import alluArjunAsset from '@/assets/hero-collage/AlluArjun.webp.asset.json';
+import hanumanMakingAsset from '@/assets/hero-collage/Hanuman_Making.webp.asset.json';
+import editingAsset from '@/assets/hero-collage/IMG_5522_Original.jpg.asset.json';
+import setReviewAsset from '@/assets/hero-collage/IMG_5842_Original.jpg.asset.json';
+import nightEditAsset from '@/assets/hero-collage/IMG_7048.webp.asset.json';
+import karthikAsset from '@/assets/hero-collage/Karthik_Prashanth_Varma_Nitayamenon.webp.asset.json';
+import maniSharmaAsset from '@/assets/hero-collage/ManiSharma_Garu.webp.asset.json';
+import sandeepAsset from '@/assets/hero-collage/Sandeep_Madhav.jpg.asset.json';
+import sudeerAsset from '@/assets/hero-collage/Sudeer_YashMaster.webp.asset.json';
+import suhashAsset from '@/assets/hero-collage/Suhash_BTS.webp.asset.json';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 const WHATSAPP =
@@ -18,60 +20,74 @@ const WHATSAPP =
 
 const collage = [
   {
-    src: alluArjunBts,
+    src: alluArjunAsset.url,
     alt: 'CineQuick filming a behind-the-scenes production',
     className: 'left-[2%] top-[13%] h-[24%] w-[25%] sm:left-[3%] sm:top-[10%] sm:h-[28%] sm:w-[22%] lg:left-[5%] lg:h-[31%] lg:w-[23%]',
     drift: -10,
     parallax: -52,
   },
   {
-    src: hanumanMaking,
+    src: nightEditAsset.url,
     alt: 'Professional cinema camera setup on location',
     className: 'right-[3%] top-[11%] h-[21%] w-[26%] sm:right-[4%] sm:h-[29%] sm:w-[21%] lg:right-[7%] lg:w-[24%]',
     drift: 12,
     parallax: -34,
   },
   {
-    src: karthikPrashanth,
+    src: editingAsset.url,
     alt: 'CineQuick team working with film talent',
     className: 'bottom-[7%] left-[3%] h-[24%] w-[29%] sm:bottom-[8%] sm:left-[7%] sm:h-[28%] sm:w-[24%] lg:w-[27%]',
     drift: 9,
     parallax: 44,
   },
   {
-    src: suhashBts,
+    src: suhashAsset.url,
     alt: 'CineQuick production crew preparing a shot',
     className: 'bottom-[6%] right-[3%] h-[25%] w-[27%] sm:bottom-[9%] sm:right-[7%] sm:h-[27%] sm:w-[23%] lg:w-[26%]',
     drift: -12,
     parallax: 58,
   },
   {
-    src: makingWithAa,
+    src: hanumanMakingAsset.url,
     alt: 'Camera operator capturing a cinematic scene',
     className: 'hidden sm:block left-[27%] top-[4%] h-[19%] w-[16%] lg:left-[30%] lg:h-[22%] lg:w-[17%]',
     drift: 7,
     parallax: -70,
   },
   {
-    src: ragavendaravBts,
+    src: karthikAsset.url,
     alt: 'Behind-the-scenes direction during a CineQuick shoot',
     className: 'hidden sm:block right-[25%] top-[3%] h-[18%] w-[15%] lg:right-[29%] lg:h-[21%] lg:w-[16%]',
     drift: -8,
     parallax: -62,
   },
   {
-    src: alluArjun,
+    src: setReviewAsset.url,
     alt: 'On-set production moment captured by CineQuick',
     className: 'hidden sm:block bottom-[3%] left-[32%] h-[18%] w-[14%] lg:left-[34%] lg:h-[20%] lg:w-[15%]',
     drift: -7,
     parallax: 76,
   },
   {
-    src: sudeerYashmaster,
+    src: maniSharmaAsset.url,
     alt: 'CineQuick creators collaborating on set',
     className: 'hidden sm:block bottom-[2%] right-[30%] h-[19%] w-[15%] lg:right-[32%] lg:h-[21%] lg:w-[16%]',
     drift: 8,
     parallax: 68,
+  },
+  {
+    src: sandeepAsset.url,
+    alt: 'Production crew planning a scene on location',
+    className: 'hidden lg:block left-[1%] top-[46%] h-[18%] w-[15%]',
+    drift: 6,
+    parallax: 28,
+  },
+  {
+    src: sudeerAsset.url,
+    alt: 'CineQuick creators together after production',
+    className: 'hidden lg:block right-[1%] top-[45%] h-[18%] w-[15%]',
+    drift: -6,
+    parallax: 24,
   },
 ];
 
