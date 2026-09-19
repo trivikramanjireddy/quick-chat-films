@@ -12,6 +12,11 @@ import maniSharmaAsset from '@/assets/hero-collage/ManiSharma_Garu.webp.asset.js
 import sandeepAsset from '@/assets/hero-collage/Sandeep_Madhav.jpg.asset.json';
 import sudeerAsset from '@/assets/hero-collage/Sudeer_YashMaster.webp.asset.json';
 import suhashAsset from '@/assets/hero-collage/Suhash_BTS.webp.asset.json';
+import maheshBtsAsset from '@/assets/hero-collage/Mahesh_BTS.webp.asset.json';
+import maheshImagesAsset from '@/assets/hero-collage/Mahesh_Images.jpg.asset.json';
+import maheshMaking2Asset from '@/assets/hero-collage/Mahesh_Making_2.webp.asset.json';
+import maheshMakingAsset from '@/assets/hero-collage/MaheshMaking.webp.asset.json';
+import manisharmaAsset from '@/assets/hero-collage/Manisharma.jpg.asset.json';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 const WHATSAPP =
