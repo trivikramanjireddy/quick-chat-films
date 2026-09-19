@@ -12,6 +12,11 @@ import maniSharmaAsset from '@/assets/hero-collage/ManiSharma_Garu.webp.asset.js
 import sandeepAsset from '@/assets/hero-collage/Sandeep_Madhav.jpg.asset.json';
 import sudeerAsset from '@/assets/hero-collage/Sudeer_YashMaster.webp.asset.json';
 import suhashAsset from '@/assets/hero-collage/Suhash_BTS.webp.asset.json';
+import maheshBtsAsset from '@/assets/hero-collage/Mahesh_BTS.webp.asset.json';
+import maheshImagesAsset from '@/assets/hero-collage/Mahesh_Images.jpg.asset.json';
+import maheshMaking2Asset from '@/assets/hero-collage/Mahesh_Making_2.webp.asset.json';
+import maheshMakingAsset from '@/assets/hero-collage/MaheshMaking.webp.asset.json';
+import manisharmaAsset from '@/assets/hero-collage/Manisharma.jpg.asset.json';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 const WHATSAPP =
@@ -88,6 +93,41 @@ const collage = [
     className: 'hidden lg:block right-[1%] top-[45%] h-[18%] w-[15%]',
     drift: -6,
     parallax: 24,
+  },
+  {
+    src: maheshMakingAsset.url,
+    alt: 'CineQuick filming with Mahesh on set',
+    className: 'hidden lg:block left-[1%] top-[41%] h-[15%] w-[14%]',
+    drift: 7,
+    parallax: -38,
+  },
+  {
+    src: maheshMaking2Asset.url,
+    alt: 'Behind-the-scenes moment with Mahesh during a shoot',
+    className: 'hidden lg:block right-[1%] top-[41%] h-[15%] w-[14%]',
+    drift: -7,
+    parallax: -32,
+  },
+  {
+    src: maheshBtsAsset.url,
+    alt: 'Mahesh captured behind the scenes by CineQuick',
+    className: 'hidden lg:block left-[16%] top-[68%] h-[16%] w-[13%]',
+    drift: -8,
+    parallax: 40,
+  },
+  {
+    src: manisharmaAsset.url,
+    alt: 'CineQuick on set with Mani Sharma',
+    className: 'hidden lg:block right-[16%] top-[68%] h-[16%] w-[13%]',
+    drift: 8,
+    parallax: 36,
+  },
+  {
+    src: maheshImagesAsset.url,
+    alt: 'Portrait moment from a CineQuick production',
+    className: 'hidden lg:block left-[47%] bottom-[1%] h-[15%] w-[12%]',
+    drift: 6,
+    parallax: 50,
   },
 ];
 
