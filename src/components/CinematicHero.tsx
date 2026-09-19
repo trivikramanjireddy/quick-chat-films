@@ -94,6 +94,41 @@ const collage = [
     drift: -6,
     parallax: 24,
   },
+  {
+    src: maheshMakingAsset.url,
+    alt: 'CineQuick filming with Mahesh on set',
+    className: 'hidden lg:block left-[1%] top-[41%] h-[15%] w-[14%]',
+    drift: 7,
+    parallax: -38,
+  },
+  {
+    src: maheshMaking2Asset.url,
+    alt: 'Behind-the-scenes moment with Mahesh during a shoot',
+    className: 'hidden lg:block right-[1%] top-[41%] h-[15%] w-[14%]',
+    drift: -7,
+    parallax: -32,
+  },
+  {
+    src: maheshBtsAsset.url,
+    alt: 'Mahesh captured behind the scenes by CineQuick',
+    className: 'hidden lg:block left-[16%] top-[68%] h-[16%] w-[13%]',
+    drift: -8,
+    parallax: 40,
+  },
+  {
+    src: manisharmaAsset.url,
+    alt: 'CineQuick on set with Mani Sharma',
+    className: 'hidden lg:block right-[16%] top-[68%] h-[16%] w-[13%]',
+    drift: 8,
+    parallax: 36,
+  },
+  {
+    src: maheshImagesAsset.url,
+    alt: 'Portrait moment from a CineQuick production',
+    className: 'hidden lg:block left-[47%] bottom-[1%] h-[15%] w-[12%]',
+    drift: 6,
+    parallax: 50,
+  },
 ];
 
 const CollageFrame = ({
