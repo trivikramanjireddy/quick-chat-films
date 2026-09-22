@@ -10,4 +10,4 @@
 - [x] Remove the On Sets section and its exclusive media from the website
 - [x] Remove the Our Services section and its homepage navigation link
 - [x] Remove the Equipment / Drone Systems section without affecting pricing content
-- [ ] Verify the remaining homepage connects cleanly and builds successfully
+- [x] Verify the remaining homepage connects cleanly and builds successfully
