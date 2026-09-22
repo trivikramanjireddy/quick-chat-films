@@ -7,3 +7,7 @@
 - [x] Build the focused six-point Why CineQuick section
 - [x] Reorder the homepage around work, testimonials, and booking
 - [x] Verify the streamlined homepage on desktop and mobile
+- [ ] Remove the On Sets section and its exclusive media from the website
+- [ ] Remove the Our Services section and its homepage navigation link
+- [ ] Remove the Equipment / Drone Systems section without affecting pricing content
+- [ ] Verify the remaining homepage connects cleanly and builds successfully
