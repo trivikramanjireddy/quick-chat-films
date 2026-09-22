@@ -6,4 +6,4 @@
 - [x] Remove the three generic homepage sections
 - [x] Build the focused six-point Why CineQuick section
 - [x] Reorder the homepage around work, testimonials, and booking
-- [ ] Verify the streamlined homepage on desktop and mobile
+- [x] Verify the streamlined homepage on desktop and mobile
