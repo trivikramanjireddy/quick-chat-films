@@ -1,13 +1,10 @@
 import Header from '@/components/Header';
 import CinematicHero from '@/components/CinematicHero';
 import Audience from '@/components/Audience';
-import Services from '@/components/Services';
-import Equipment from '@/components/Equipment';
 import PricingStory from '@/components/PricingStory';
 import Clients from '@/components/Clients';
 import WhyChoose from '@/components/WhyChoose';
 import Reviews from '@/components/Reviews';
-import OnSets from '@/components/OnSets';
 import FAQ from '@/components/FAQ';
 import ProjectForm from '@/components/ProjectForm';
 import BookShoot from '@/components/BookShoot';
@@ -20,14 +17,11 @@ const Index = () => {
       <Header />
       <main>
         <CinematicHero />
-        <OnSets />
         <Clients />
         <WhyChoose />
         <Reviews />
         <BookShoot />
         <Audience />
-        <Services />
-        <Equipment />
         <PricingStory />
         <FAQ />
         <ProjectForm />

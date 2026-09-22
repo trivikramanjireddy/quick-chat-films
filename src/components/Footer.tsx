@@ -6,7 +6,6 @@ const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
 const quickLinks = [
   { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
   { href: '#clients', label: 'Our Clients' },
   { href: '#why', label: 'Why CineQuick' },
   { href: '#reviews', label: 'Reviews' },
