@@ -58,6 +58,9 @@ const lanes: GalleryImage[][] = [
   ],
 ];
 
+const primaryLetters = Array.from("INDIA'S");
+const supportingWords = ['CONTENT', 'CREATION', 'TEAM'];
+
 const FlowGroup = ({ images, duplicate = false }: { images: GalleryImage[]; duplicate?: boolean }) => (
   <div className="hero-flow-group" aria-hidden={duplicate || undefined}>
     {images.map((image, index) => (
@@ -108,11 +111,32 @@ const CinematicHero = () => (
     <div className="relative z-10 flex min-h-[100svh] items-center justify-center px-5 pb-10 pt-24 text-center sm:px-8">
       <h1
         id="hero-title"
-        className="hero-title-lockup animate-fade-in text-foreground"
+        className="hero-title-lockup"
+        aria-label="India's fastest content creation team"
       >
-        <span className="hero-title-primary">INDIA&apos;S</span>
-        <span className="hero-title-secondary">FASTEST CONTENT</span>
-        <span className="hero-title-secondary">PRODUCTION TEAM</span>
+        <span className="hero-title-primary" aria-hidden="true">
+          {primaryLetters.map((letter, index) => (
+            <span
+              className="hero-title-primary-letter"
+              style={{ '--letter-index': index } as React.CSSProperties}
+              key={`${letter}-${index}`}
+            >
+              {letter}
+            </span>
+          ))}
+        </span>
+        <span className="hero-title-supporting" aria-hidden="true">
+          <span className="hero-title-fastest">FASTEST</span>
+          {supportingWords.map((word, index) => (
+            <span
+              className="hero-title-word"
+              style={{ '--word-index': index } as React.CSSProperties}
+              key={word}
+            >
+              {word}
+            </span>
+          ))}
+        </span>
       </h1>
     </div>
   </section>

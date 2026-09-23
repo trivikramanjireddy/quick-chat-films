@@ -11,3 +11,6 @@
 - [x] Remove the Our Services section and its homepage navigation link
 - [x] Remove the Equipment / Drone Systems section without affecting pricing content
 - [x] Verify the remaining homepage connects cleanly and builds successfully
+- [x] Redesign the hero headline as a premium two-level cinematic lockup
+- [x] Add a restrained one-time letter, blur, scale, and orange-sweep reveal
+- [ ] Verify the redesigned headline on desktop and mobile
