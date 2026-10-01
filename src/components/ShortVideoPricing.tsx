@@ -8,24 +8,18 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 const packages = [
   {
     icon: Smartphone,
-    label: 'Mobile Shoot',
     title: 'Mobile Shoot',
     price: '₹3,999',
-    message: 'Hi! I\'m interested in the Flagship Mobile shoot package starting at ₹3,999.',
   },
   {
     icon: Camera,
-    label: 'Professional Camera',
     title: 'Professional Camera',
     price: '₹7,999',
-    message: 'Hi! I\'m interested in the Professional Camera shoot package starting at ₹7,999.',
   },
   {
     icon: Rocket,
-    label: 'Drone + Camera',
     title: 'Drone + Camera',
     price: '₹15,999',
-    message: 'Hi! I\'m interested in the Drone + Camera shoot package starting at ₹15,999.',
   },
 ];
 
