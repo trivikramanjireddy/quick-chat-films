@@ -1,13 +1,11 @@
 import Header from '@/components/Header';
 import CinematicHero from '@/components/CinematicHero';
 import Audience from '@/components/Audience';
-import PricingStory from '@/components/PricingStory';
 import Clients from '@/components/Clients';
 import WhyChoose from '@/components/WhyChoose';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import ProjectForm from '@/components/ProjectForm';
-import ShortVideoPricing from '@/components/ShortVideoPricing';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -20,9 +18,7 @@ const Index = () => {
         <Clients />
         <WhyChoose />
         <Reviews />
-        <ShortVideoPricing />
         <Audience />
-        <PricingStory />
         <FAQ />
         <ProjectForm />
         <Contact />
