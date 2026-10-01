@@ -7,7 +7,7 @@ import WhyChoose from '@/components/WhyChoose';
 import Reviews from '@/components/Reviews';
 import FAQ from '@/components/FAQ';
 import ProjectForm from '@/components/ProjectForm';
-import BookShoot from '@/components/BookShoot';
+import ShortVideoPricing from '@/components/ShortVideoPricing';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -20,7 +20,7 @@ const Index = () => {
         <Clients />
         <WhyChoose />
         <Reviews />
-        <BookShoot />
+        <ShortVideoPricing />
         <Audience />
         <PricingStory />
         <FAQ />
