@@ -68,7 +68,7 @@ const ShortVideoPricing = () => {
             >
               <Link
                 to="/pricing"
-                className="block h-full rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:scale-[1.03] hover:border-primary/60 hover:shadow-[0_0_60px_-12px_hsl(var(--primary)/0.5)]"
+                className="relative block h-full rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:scale-[1.03] hover:border-primary/60 hover:shadow-[0_0_60px_-12px_hsl(var(--primary)/0.5)]"
               >
                 <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
