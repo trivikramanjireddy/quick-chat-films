@@ -36,6 +36,31 @@ import notesImg from '@/assets/pricing/notes.png';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 const wa = (msg: string) => `${WHATSAPP_LINK}?text=${encodeURIComponent(msg)}`;
+export const SHORT_VIDEO_MAX_DURATION_SECONDS = 60;
+
+const FullLengthEnquiry = () => (
+  <section className="container mx-auto px-4 pt-8 md:px-6 md:pt-12">
+    <div className="flex flex-col gap-6 rounded-lg border border-primary/30 bg-card/70 p-6 md:flex-row md:items-center md:justify-between md:p-8">
+      <div className="max-w-3xl">
+        <p className="mb-2 text-xs uppercase tracking-[0.3em] text-primary">Custom Production</p>
+        <h2 className="font-display text-3xl md:text-4xl">LOOKING FOR FULL-LENGTH VIDEOS?</h2>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+          The packages listed below are exclusively for short videos under 60 seconds. For full-length videos, please share your requirements with us. Our team will understand your needs and create a customized production plan and quotation accordingly.
+        </p>
+        <p className="mt-2 text-sm text-foreground/80">Full-length videos are not included in these packages.</p>
+      </div>
+      <a
+        href={wa("Hi! I'd like to discuss a full-length video project. Here are my requirements:")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-outline-cine inline-flex w-full shrink-0 md:w-auto"
+      >
+        <WhatsAppIcon className="h-5 w-5" />
+        Discuss Your Requirements on WhatsApp
+      </a>
+    </div>
+  </section>
+);
 
 const Cta = ({ label, message }: { label: string; message: string }) => (
   <motion.a
@@ -162,12 +187,14 @@ const PackageSection = ({
             <LetterReveal text={title} />
           </h2>
           <Rise delay={0.15}>
-            <p className="mt-6 text-muted-foreground">Starts From</p>
+            <p className="mt-6 text-muted-foreground">Starting From</p>
             <p className="font-display text-6xl text-gradient-orange md:text-7xl">
               <Counter to={price} />
               <span className="text-3xl">/-</span>
             </p>
-            <p className="text-sm text-muted-foreground">For One Short Video</p>
+            <p className="text-sm text-muted-foreground">
+              For One Short Video (Under {SHORT_VIDEO_MAX_DURATION_SECONDS} Seconds)
+            </p>
           </Rise>
 
           <Rise delay={0.25}>
@@ -176,6 +203,9 @@ const PackageSection = ({
             </p>
           </Rise>
           <OfferCards offers={offers} />
+          <p className="mt-4 text-sm text-muted-foreground">
+            All videos are under {SHORT_VIDEO_MAX_DURATION_SECONDS} seconds each.
+          </p>
           <Rise delay={0.1}>
             <p className="mt-4 text-xs italic text-muted-foreground">
               Offer Price | Limited Shoots
@@ -357,6 +387,7 @@ const FinalCta = () => {
 const PricingCinematic = () => (
   <div className="bg-background">
     <Hero />
+    <FullLengthEnquiry />
 
     <PackageSection
       image={mobileImg}

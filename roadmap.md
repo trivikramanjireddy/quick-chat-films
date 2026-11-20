@@ -16,3 +16,4 @@
 - [ ] Verify the redesigned headline on desktop and mobile
 - [x] Remove the FAQ section and its component from the website
 - [x] Remove the testimonials section and stale footer link from the website
+- [x] Add full-length video enquiry banner and under-60-second clarifications on the pricing page
