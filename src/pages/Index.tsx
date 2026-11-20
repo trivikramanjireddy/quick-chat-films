@@ -3,8 +3,6 @@ import CinematicHero from '@/components/CinematicHero';
 import Audience from '@/components/Audience';
 import Clients from '@/components/Clients';
 import WhyChoose from '@/components/WhyChoose';
-import Reviews from '@/components/Reviews';
-import FAQ from '@/components/FAQ';
 import ProjectForm from '@/components/ProjectForm';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -17,9 +15,7 @@ const Index = () => {
         <CinematicHero />
         <Clients />
         <WhyChoose />
-        <Reviews />
         <Audience />
-        <FAQ />
         <ProjectForm />
         <Contact />
       </main>

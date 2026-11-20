@@ -14,3 +14,5 @@
 - [x] Redesign the hero headline as a premium two-level cinematic lockup
 - [x] Add a restrained one-time letter, blur, scale, and orange-sweep reveal
 - [ ] Verify the redesigned headline on desktop and mobile
+- [x] Remove the FAQ section and its component from the website
+- [x] Remove the testimonials section and stale footer link from the website

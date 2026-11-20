@@ -8,7 +8,6 @@ const quickLinks = [
   { href: '#home', label: 'Home' },
   { href: '#clients', label: 'Our Clients' },
   { href: '#why', label: 'Why CineQuick' },
-  { href: '#reviews', label: 'Reviews' },
   { href: '#start-project', label: 'Start Your Project' },
 ];
 
