@@ -38,6 +38,33 @@ const WHATSAPP_LINK = 'https://wa.me/919493668321';
 const wa = (msg: string) => `${WHATSAPP_LINK}?text=${encodeURIComponent(msg)}`;
 export const SHORT_VIDEO_MAX_DURATION_SECONDS = 60;
 
+export const PACKAGE_PRICING: Record<'mobile' | 'camera' | 'drone', { startingPrice: number; offers: Offer[] }> = {
+  mobile: {
+    startingPrice: 3999,
+    offers: [
+      { reels: '6 Reels', perReel: '₹2,750/-', total: '₹16,500/-' },
+      { reels: '8 Reels', perReel: '₹2,500/-', total: '₹20,000/-' },
+      { reels: '16 Reels', perReel: '₹2,000/-', total: '₹32,000/-' },
+    ],
+  },
+  camera: {
+    startingPrice: 7999,
+    offers: [
+      { reels: '4 Reels', perReel: '₹6,000/-', total: '₹24,000/-' },
+      { reels: '8 Reels', perReel: '₹5,000/-', total: '₹40,000/-' },
+      { reels: '16 Reels', perReel: '₹4,500/-', total: '₹72,000/-' },
+    ],
+  },
+  drone: {
+    startingPrice: 15999,
+    offers: [
+      { reels: '4 Reels', perReel: '₹13,500/-', total: '₹54,000/-' },
+      { reels: '8 Reels', perReel: '₹11,250/-', total: '₹90,000/-' },
+      { reels: '16 Reels', perReel: '₹10,000/-', total: '₹1,60,000/-' },
+    ],
+  },
+};
+
 const FullLengthEnquiry = () => (
   <section className="container mx-auto px-4 pt-8 md:px-6 md:pt-12">
     <div className="flex flex-col gap-6 rounded-lg border border-primary/30 bg-card/70 p-6 md:flex-row md:items-center md:justify-between md:p-8">
@@ -394,12 +421,8 @@ const PricingCinematic = () => (
       alt="Flagship Mobile Shoot Pricing"
       eyebrow="Package 01"
       title="Shoot With Flagship Mobile"
-      price={3999}
-      offers={[
-        { reels: '6 Reels', perReel: '₹2,750/-', total: '₹16,500/-' },
-        { reels: '8 Reels', perReel: '₹2,500/-', total: '₹20,000/-' },
-        { reels: '16 Reels', perReel: '₹2,000/-', total: '₹32,000/-' },
-      ]}
+      price={PACKAGE_PRICING.mobile.startingPrice}
+      offers={PACKAGE_PRICING.mobile.offers}
       ctaLabel="Book Mobile Shoot"
       ctaMessage="Hi! I'm interested in your Flagship Mobile shoot package starting at ₹3,999."
       visual={({ progress }) => <MobileVisual progress={progress} />}
@@ -410,13 +433,9 @@ const PricingCinematic = () => (
       alt="Professional Camera Shoot Pricing"
       eyebrow="Package 02"
       title="Shoot With Professional Camera"
-      price={7999}
+      price={PACKAGE_PRICING.camera.startingPrice}
       brighten
-      offers={[
-        { reels: '4 Reels', perReel: '₹6,000/-', total: '₹24,000/-' },
-        { reels: '8 Reels', perReel: '₹5,000/-', total: '₹40,000/-' },
-        { reels: '16 Reels', perReel: '₹4,500/-', total: '₹72,000/-' },
-      ]}
+      offers={PACKAGE_PRICING.camera.offers}
       ctaLabel="Book Camera Shoot"
       ctaMessage="Hi! I'm interested in your Professional Camera shoot package starting at ₹7,999."
       visual={({ progress }) => <CameraVisual progress={progress} />}
@@ -427,12 +446,8 @@ const PricingCinematic = () => (
       alt="Drone and Camera Shoot Pricing"
       eyebrow="Package 03"
       title="Shoot With Drone & Camera"
-      price={15999}
-      offers={[
-        { reels: '4 Reels', perReel: '₹13,500/-', total: '₹54,000/-' },
-        { reels: '8 Reels', perReel: '₹11,250/-', total: '₹90,000/-' },
-        { reels: '16 Reels', perReel: '₹10,000/-', total: '₹1,60,000/-' },
-      ]}
+      price={PACKAGE_PRICING.drone.startingPrice}
+      offers={PACKAGE_PRICING.drone.offers}
       ctaLabel="Get Quote on WhatsApp"
       ctaMessage="Hi! I'm interested in your Drone & Camera shoot package starting at ₹15,999."
       visual={({ progress }) => <DroneVisual progress={progress} />}
