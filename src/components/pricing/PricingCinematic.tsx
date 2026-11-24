@@ -29,9 +29,9 @@ import WhatsAppIcon from '@/components/WhatsAppIcon';
 import { Counter, LetterReveal, Rise, EASE } from './animations';
 import OfferCards, { Offer } from './OfferCards';
 import logo from '@/assets/header-logo.png';
-import mobileImg from '@/assets/pricing/mobile.png';
-import cameraImg from '@/assets/pricing/camera.png';
-import droneImg from '@/assets/pricing/drone.png';
+import mobileProductImage from '@/assets/pricing/mobile-product-cutout.png.asset.json';
+import cameraProductImage from '@/assets/pricing/professional-camera-cutout.png.asset.json';
+import droneProductImage from '@/assets/pricing/drone-camera-cutout.png.asset.json';
 import notesImg from '@/assets/pricing/notes.png';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
@@ -417,7 +417,7 @@ const PricingCinematic = () => (
     <FullLengthEnquiry />
 
     <PackageSection
-      image={mobileImg}
+      image={mobileProductImage.url}
       alt="Flagship Mobile Shoot Pricing"
       eyebrow="Package 01"
       title="Shoot With Flagship Mobile"
@@ -429,7 +429,7 @@ const PricingCinematic = () => (
     />
 
     <PackageSection
-      image={cameraImg}
+      image={cameraProductImage.url}
       alt="Professional Camera Shoot Pricing"
       eyebrow="Package 02"
       title="Shoot With Professional Camera"
@@ -442,7 +442,7 @@ const PricingCinematic = () => (
     />
 
     <PackageSection
-      image={droneImg}
+      image={droneProductImage.url}
       alt="Drone and Camera Shoot Pricing"
       eyebrow="Package 03"
       title="Shoot With Drone & Camera"
@@ -466,13 +466,19 @@ const MobileVisual = ({ progress }: { progress: MotionValue<number> }) => {
   const rotate = useTransform(progress, [0, 0.5], [14, 0]);
   const y = useTransform(progress, [0, 1], ['8%', '-8%']);
   return (
-    <motion.img
-      src={mobileImg}
-      alt="Flagship Mobile Shoot Pricing"
-      loading="lazy"
-      style={{ x, y, rotate, transformPerspective: 1200 }}
-      className="mx-auto w-full max-w-lg rounded-3xl shadow-2xl"
-    />
+    <div className="relative isolate mx-auto flex min-h-[19rem] w-full max-w-lg items-center justify-center md:min-h-[30rem]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[74%] w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.18)_0%,hsl(var(--foreground)/0.12)_38%,transparent_72%)] blur-3xl"
+      />
+      <motion.img
+        src={mobileProductImage.url}
+        alt="Silver flagship smartphone"
+        loading="lazy"
+        style={{ x, y, rotate, transformPerspective: 1200 }}
+        className="relative z-10 h-auto max-h-[19rem] w-full object-contain md:max-h-[30rem]"
+      />
+    </div>
   );
 };
 
@@ -480,21 +486,17 @@ const CameraVisual = ({ progress }: { progress: MotionValue<number> }) => {
   const scale = useTransform(progress, [0, 0.5], [0.8, 1]);
   const y = useTransform(progress, [0, 1], ['10%', '-10%']);
   return (
-    <div className="relative">
+    <div className="relative isolate mx-auto flex min-h-[19rem] w-full max-w-lg items-center justify-center md:min-h-[30rem]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[72%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.2)_0%,transparent_70%)] blur-3xl"
+      />
       <motion.img
-        src={cameraImg}
-        alt="Professional Camera Shoot Pricing"
+        src={cameraProductImage.url}
+        alt="Professional cinema camera rig"
         loading="lazy"
         style={{ scale, y }}
-        className="mx-auto w-full max-w-lg rounded-3xl shadow-2xl"
-      />
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-tr from-transparent via-white/25 to-transparent"
-        initial={{ opacity: 0, x: '-40%' }}
-        whileInView={{ opacity: [0, 0.9, 0], x: '40%' }}
-        viewport={{ once: true, margin: '-15% 0px' }}
-        transition={{ duration: 1.8, ease: EASE, delay: 0.4 }}
+        className="relative z-10 h-auto max-h-[19rem] w-full object-contain md:max-h-[30rem]"
       />
     </div>
   );
@@ -504,28 +506,22 @@ const DroneVisual = ({ progress }: { progress: MotionValue<number> }) => {
   const y = useTransform(progress, [0, 0.5], ['-30%', '0%']);
   const opacity = useTransform(progress, [0, 0.3], [0, 1]);
   return (
-    <motion.div style={{ y, opacity }} className="relative">
+    <motion.div
+      style={{ y, opacity }}
+      className="relative isolate mx-auto flex min-h-[19rem] w-full max-w-lg items-center justify-center md:min-h-[30rem]"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[78%] w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.16)_0%,hsl(var(--foreground)/0.15)_38%,transparent_72%)] blur-3xl"
+      />
       <motion.img
-        src={droneImg}
-        alt="Drone and Camera Shoot Pricing"
+        src={droneProductImage.url}
+        alt="Drone and mirrorless camera"
         loading="lazy"
-        className="mx-auto w-full max-w-lg rounded-3xl shadow-2xl"
+        className="relative z-10 h-auto max-h-[19rem] w-full object-contain md:max-h-[30rem]"
         animate={{ y: [0, -14, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
-      {/* Spinning rotor accents */}
-      {[
-        'left-[12%] top-[10%]',
-        'right-[12%] top-[10%]',
-      ].map((pos) => (
-        <motion.span
-          key={pos}
-          aria-hidden
-          className={`pointer-events-none absolute ${pos} h-16 w-16 rounded-full border border-primary/40 border-t-primary/90`}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 0.9, repeat: Infinity, ease: 'linear' }}
-        />
-      ))}
     </motion.div>
   );
 };
