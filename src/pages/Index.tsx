@@ -5,6 +5,7 @@ import Clients from '@/components/Clients';
 import WhyChoose from '@/components/WhyChoose';
 import ProjectForm from '@/components/ProjectForm';
 import Contact from '@/components/Contact';
+import Founders from '@/components/Founders';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <Audience />
         <ProjectForm />
         <Contact />
+        <Founders />
       </main>
       <Footer />
     </div>
