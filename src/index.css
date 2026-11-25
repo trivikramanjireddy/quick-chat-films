@@ -588,3 +588,20 @@
     font-size: 16px !important;
   }
 }
+/* iPhone / Safari fix: "INDIA'S" was invisible because background-clip:text on the
+   parent doesn't paint into animated (transformed) child letters in WebKit.
+   Apply the same gradient to each letter instead. */
+.hero-title-primary {
+  background: none !important;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: hsl(var(--foreground));
+}
+
+.hero-title-primary-letter {
+  background: linear-gradient(180deg, hsl(var(--foreground)) 10%, hsl(var(--foreground) / 0.92) 48%, hsl(var(--foreground) / 0.58) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
