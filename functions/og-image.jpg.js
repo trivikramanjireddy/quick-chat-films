@@ -1,10 +1,10 @@
 // Serves the WhatsApp/Facebook link-preview image at /og-image.jpg
 // (image stored in Google Drive; cached at Cloudflare's edge)
-const DRIVE_ID = "1V5RfgLH8T-BB4cXQK_am8GMQVaYwNT2J";
+const DRIVE_ID = "18cmbpz8z94yAtD5SNe7HOL87B-IUs9X0";
 
 export async function onRequest({ request, waitUntil }) {
   const cache = caches.default;
-  const key = new Request(new URL(request.url).origin + "/og-image.jpg");
+  const key = new Request(new URL(request.url).origin + "/og-image.jpg?id=" + DRIVE_ID);
   const hit = await cache.match(key);
   if (hit) return hit;
 
