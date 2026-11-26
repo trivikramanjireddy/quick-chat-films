@@ -210,23 +210,6 @@
     border: 1px solid hsl(var(--border));
   }
 
-  /* Form Input Cinematic */
-  .input-cine {
-    @apply w-full px-4 py-3 rounded-lg transition-all duration-300;
-    background: hsl(var(--cine-gray));
-    border: 1px solid hsl(var(--border));
-    color: hsl(var(--foreground));
-  }
-
-  .input-cine:focus {
-    outline: none;
-    border-color: hsl(var(--cine-orange));
-    box-shadow: 0 0 0 3px hsla(25, 100%, 50%, 0.2);
-  }
-
-  .input-cine::placeholder {
-    color: hsl(var(--muted-foreground));
-  }
 }
 
 @layer utilities {
