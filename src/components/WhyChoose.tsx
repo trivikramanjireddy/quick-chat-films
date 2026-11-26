@@ -4,7 +4,7 @@ import { Aperture, Clapperboard, Clock3, Film, MapPin, UsersRound } from 'lucide
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const strengths = [
-  { icon: Film, value: '55+', label: 'Worked on Films' },
+  { icon: Film, value: '80+', label: 'Movies Worked On' },
   { icon: Clapperboard, value: '100+', label: 'Commercials & Brands' },
   { icon: Clock3, value: 'Same-Day', label: 'Delivery Available' },
   { icon: MapPin, value: 'On-Location', label: 'Editing' },
@@ -38,9 +38,9 @@ const WhyChoose = () => (
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.25, ease: EASE }}
-            className="group mt-8 inline-flex items-center gap-3 border border-primary/70 bg-primary/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-primary transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_32px_-6px_rgba(255,106,0,0.55)]"
+            className="group mt-8 inline-flex items-center justify-center gap-3 border border-cta-orange bg-cta-orange px-8 py-5 text-lg font-bold uppercase text-primary-foreground transition-all duration-300 hover:brightness-110 hover:shadow-[var(--shadow-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-11 md:px-12 md:py-6 md:text-xl"
           >
-            View Our Work
+            View Our Works
             <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true">→</span>
           </motion.a>
         </motion.div>
