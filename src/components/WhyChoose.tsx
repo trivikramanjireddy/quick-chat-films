@@ -31,18 +31,6 @@ const WhyChoose = () => (
           <p className="mt-7 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
             Film-set experience, commercial precision, and a crew built for speed — without compromising the frame.
           </p>
-          <motion.a
-            href="https://drive.google.com/drive/folders/1QFQs4RwfyM2brco18ngGEXXRy9o1CYWp?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.25, ease: EASE }}
-            className="group mt-8 inline-flex items-center justify-center gap-3 border border-cta-orange bg-cta-orange px-8 py-5 text-lg font-bold uppercase text-primary-foreground transition-all duration-300 hover:brightness-110 hover:shadow-[var(--shadow-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-11 md:px-12 md:py-6 md:text-xl"
-          >
-            View Our Works
-            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true">→</span>
-          </motion.a>
         </motion.div>
 
         <div className="border-t border-border/70">

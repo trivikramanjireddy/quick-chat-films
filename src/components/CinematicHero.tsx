@@ -108,7 +108,7 @@ const CinematicHero = () => (
     <div aria-hidden className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/80 to-transparent" />
     <div aria-hidden className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background/70 to-transparent" />
 
-    <div className="relative z-10 flex min-h-[100svh] items-center justify-center px-5 pb-10 pt-24 text-center sm:px-8">
+    <div className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-5 pb-10 pt-24 text-center sm:px-8">
       <h1
         id="hero-title"
         className="hero-title-lockup"
@@ -138,6 +138,15 @@ const CinematicHero = () => (
           ))}
         </span>
       </h1>
+      <a
+        href="https://cinequick.myportfolio.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group mt-7 inline-flex min-h-12 items-center justify-center gap-2 border border-cta-orange px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-primary transition-all duration-300 hover:bg-cta-orange hover:text-primary-foreground hover:shadow-[var(--shadow-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange focus-visible:ring-offset-2 focus-visible:ring-offset-background md:mt-8 md:px-8 md:py-4"
+      >
+        EXPLORE OUR WORKS
+        <span className="text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary-foreground" aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 );

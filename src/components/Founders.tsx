@@ -6,16 +6,18 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 const profiles = [
   {
-    name: 'Trivikram Anji Reddy',
+    name: 'TrivikramAnjiReddy.P',
     designation: 'FOUNDER',
     image: founderPortrait.url,
     alt: 'Trivikram Anji Reddy on a film set',
+    profileUrl: 'https://www.instagram.com/trivikramanjireddy.poluri?hvrq=b3VhN2E3Y2xmbm81&utm_source=qr',
   },
   {
-    name: 'Mahesh',
+    name: 'Mahesh Ravala',
     designation: 'CO-FOUNDER',
     image: coFounderPortrait.url,
     alt: 'Mahesh working with a cinema camera',
+    profileUrl: 'https://www.instagram.com/dop_maheshravalaofficial?lqvp=NDNocGh4ZXgwM214',
   },
 ];
 
@@ -33,9 +35,8 @@ const Founders = () => (
         transition={{ duration: 0.85, ease: EASE }}
         className="mb-10 md:mb-14"
       >
-        <p className="mb-3 text-xs font-medium uppercase tracking-[0.32em] text-primary">CineQuick</p>
-        <h2 id="leadership-heading" className="font-display text-4xl text-foreground md:text-6xl">
-          LEADERSHIP
+        <h2 id="leadership-heading" className="max-w-5xl font-display text-4xl font-bold text-foreground md:text-6xl lg:text-7xl">
+          THE PEOPLE BEHIND CINEQUICK
         </h2>
       </motion.div>
 
@@ -64,6 +65,19 @@ const Founders = () => (
               <p className="mt-2 text-xs font-medium uppercase tracking-[0.24em] text-primary md:text-sm">
                 {profile.designation}
               </p>
+              <motion.a
+                href={profile.profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${profile.name}'s Instagram profile`}
+                whileHover={{ scale: 1.025 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.25, ease: EASE }}
+                className="group mt-5 inline-flex min-h-12 items-center justify-center gap-2 border border-foreground/30 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-foreground transition-colors duration-300 hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                VISIT PROFILE{' '}
+                <span className="text-primary transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+              </motion.a>
             </div>
           </motion.article>
         ))}

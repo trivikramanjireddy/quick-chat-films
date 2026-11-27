@@ -17,3 +17,7 @@
 - [x] Remove the FAQ section and its component from the website
 - [x] Remove the testimonials section and stale footer link from the website
 - [x] Add full-length video enquiry banner and under-60-second clarifications on the pricing page
+- [x] Remove the Why CineQuick button and place the orange portfolio CTA below the hero headline
+- [x] Replace the leadership heading and profile names with the supplied details
+- [x] Add one matching Instagram profile button under each founder
+- [x] Verify leadership and work-button placement on desktop and mobile
