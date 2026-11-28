@@ -40,7 +40,7 @@ const Founders = () => (
         </h2>
       </motion.div>
 
-      <div className="grid gap-10 sm:grid-cols-2 sm:gap-8 lg:gap-12">
+      <div className="flex flex-col gap-14 md:gap-20">
         {profiles.map((profile, index) => (
           <motion.article
             key={profile.name}
@@ -48,9 +48,9 @@ const Founders = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-8% 0px' }}
             transition={{ duration: 0.9, ease: EASE, delay: index * 0.12 }}
-            className="min-w-0"
+            className="grid min-w-0 items-center md:grid-cols-2 md:gap-10 lg:gap-16"
           >
-            <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/60">
+            <div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/60 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
               <motion.img
                 src={profile.image}
                 alt={profile.alt}
@@ -60,7 +60,7 @@ const Founders = () => (
                 className="h-full w-full object-contain"
               />
             </div>
-            <div className="mt-5 border-t border-border/70 pt-4 md:mt-6 md:pt-5">
+            <div className={`mt-5 border-t border-border/70 pt-4 md:mt-0 md:pt-5 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
               <h3 className="font-display text-3xl text-foreground md:text-4xl">{profile.name}</h3>
               <p className="mt-2 text-xs font-medium uppercase tracking-[0.24em] text-primary md:text-sm">
                 {profile.designation}
