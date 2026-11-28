@@ -1,7 +1,6 @@
 import { useState, useEffect, type MouseEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, ArrowUpRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowUpRight } from 'lucide-react';
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetClose } from '@/components/ui/sheet';
 import headerLogo from '@/assets/header-logo.png';
 
@@ -69,17 +68,24 @@ const Header = () => {
 
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open navigation menu" title="Open navigation menu" className="h-12 w-12 text-cta-orange transition-transform duration-300 hover:scale-105 hover:bg-cta-orange/10 hover:text-cta-orange motion-reduce:transform-none [&_svg]:size-7">
-                <Menu strokeWidth={1.5} />
-              </Button>
+              <button
+                type="button"
+                aria-label="Open navigation menu"
+                title="Open navigation menu"
+                className="group flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-[5px] rounded-xl border-2 border-cta-orange bg-background/40 backdrop-blur-sm transition-all duration-300 hover:bg-cta-orange/10 hover:shadow-[0_0_18px_hsl(var(--cta-orange)/0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange focus-visible:ring-offset-2 focus-visible:ring-offset-background data-[state=open]:shadow-[0_0_18px_hsl(var(--cta-orange)/0.55)] md:h-12 md:w-12"
+              >
+                <span aria-hidden="true" className="block h-[2px] w-5 rounded-full bg-cta-orange transition-transform duration-300 group-data-[state=open]:translate-y-[7px] group-data-[state=open]:rotate-45 motion-reduce:transition-none" />
+                <span aria-hidden="true" className="block h-[2px] w-5 rounded-full bg-cta-orange transition-opacity duration-300 group-data-[state=open]:opacity-0 motion-reduce:transition-none" />
+                <span aria-hidden="true" className="block h-[2px] w-5 rounded-full bg-cta-orange transition-transform duration-300 group-data-[state=open]:-translate-y-[7px] group-data-[state=open]:-rotate-45 motion-reduce:transition-none" />
+              </button>
             </SheetTrigger>
             <SheetContent aria-describedby={undefined} className="flex w-full flex-col justify-center border-border bg-background px-6 sm:w-[32rem] sm:max-w-lg sm:px-10 motion-reduce:animate-none [&>button]:right-5 [&>button]:top-5 [&>button]:flex [&>button]:h-12 [&>button]:w-12 [&>button]:items-center [&>button]:justify-center [&>button]:text-cta-orange [&>button>svg]:h-6 [&>button>svg]:w-6">
               <SheetTitle className="sr-only">CineQuick navigation</SheetTitle>
               <nav aria-label="Main navigation" className="border-t border-border">
                 <SheetClose asChild>
-                  <Link to="/portfolio" className="group flex min-h-24 items-center justify-between gap-4 border-b border-border py-6 font-display text-4xl leading-tight text-foreground transition-colors duration-300 hover:text-cta-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange sm:text-5xl">
+                  <a href="https://cinequick.myportfolio.com/" target="_blank" rel="noopener noreferrer" className="group flex min-h-24 items-center justify-between gap-4 border-b border-border py-6 font-display text-4xl leading-tight text-foreground transition-colors duration-300 hover:text-cta-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange sm:text-5xl">
                     <span>EXPLORE OUR WORKS</span><ArrowUpRight aria-hidden="true" className="h-6 w-6 shrink-0 text-cta-orange transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transform-none" />
-                  </Link>
+                  </a>
                 </SheetClose>
                 <SheetClose asChild>
                   <Link to="/pricing" className="group flex min-h-24 items-center justify-between gap-4 border-b border-border py-6 font-display text-4xl text-foreground transition-colors duration-300 hover:text-cta-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange sm:text-5xl">
