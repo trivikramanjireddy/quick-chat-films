@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetClose } from '@/components/ui/sheet';
 import headerLogo from '@/assets/header-logo.png';
+import { PORTFOLIO_URL } from '@/lib/links';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,7 +84,7 @@ const Header = () => {
               <SheetTitle className="sr-only">CineQuick navigation</SheetTitle>
               <nav aria-label="Main navigation" className="border-t border-border">
                 <SheetClose asChild>
-                  <a href="https://cinequick.myportfolio.com/" target="_blank" rel="noopener noreferrer" className="group flex min-h-24 items-center justify-between gap-4 border-b border-border py-6 font-display text-4xl leading-tight text-foreground transition-colors duration-300 hover:text-cta-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange sm:text-5xl">
+                  <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" className="group flex min-h-24 items-center justify-between gap-4 border-b border-border py-6 font-display text-4xl leading-tight text-foreground transition-colors duration-300 hover:text-cta-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange sm:text-5xl">
                     <span>EXPLORE OUR WORKS</span><ArrowUpRight aria-hidden="true" className="h-6 w-6 shrink-0 text-cta-orange transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transform-none" />
                   </a>
                 </SheetClose>

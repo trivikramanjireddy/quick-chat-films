@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Aperture, Clapperboard, Clock3, Film, MapPin, UsersRound } from 'lucide-react';
 
+import { PORTFOLIO_URL } from '@/lib/links';
+
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const strengths = [
@@ -35,27 +37,31 @@ const WhyChoose = () => (
 
         <div className="border-t border-border/70">
           {strengths.map((strength, index) => (
-            <motion.div
+            <motion.a
               key={strength.label}
+              href={PORTFOLIO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${strength.value} ${strength.label} — explore our works`}
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-8% 0px' }}
               transition={{ duration: 0.72, ease: EASE, delay: index * 0.05 }}
-              className="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-3 border-b border-border/70 py-5 md:grid-cols-[3rem_1fr_auto] md:gap-6 md:py-7"
+              className="group grid cursor-pointer grid-cols-[2.5rem_1fr_auto] items-center gap-3 border-b border-border/70 py-5 transition-colors duration-300 hover:bg-cta-orange/[0.05] focus-visible:bg-cta-orange/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cta-orange md:grid-cols-[3rem_1fr_auto] md:gap-6 md:py-7"
             >
               <span className="text-xs tabular-nums text-muted-foreground/60">{String(index + 1).padStart(2, '0')}</span>
               <div className="min-w-0">
-                <p className="text-xl font-medium leading-tight text-foreground transition-colors duration-300 group-hover:text-primary md:text-3xl">
+                <p className="text-xl font-medium leading-tight text-foreground transition-colors duration-300 group-hover:text-cta-orange md:text-3xl">
                   {strength.value}
                 </p>
                 <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground md:text-sm">
                   {strength.label}
                 </p>
               </div>
-              <span className="flex h-10 w-10 items-center justify-center border border-border bg-background/40 transition-colors duration-300 group-hover:border-primary/60 md:h-12 md:w-12">
+              <span className="flex h-10 w-10 items-center justify-center border border-border bg-background/40 transition-colors duration-300 group-hover:border-cta-orange/70 md:h-12 md:w-12">
                 <strength.icon className="h-4 w-4 text-primary md:h-5 md:w-5" strokeWidth={1.5} />
               </span>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

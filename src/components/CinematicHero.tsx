@@ -21,6 +21,7 @@ type GalleryImage = {
   alt: string;
   size: 'small' | 'medium' | 'large';
 };
+import { PORTFOLIO_URL } from '@/lib/links';
 
 const lanes: GalleryImage[][] = [
   [
@@ -142,7 +143,7 @@ const CinematicHero = () => (
       </h1>
       <Button asChild variant="cinematic" className="mt-7 h-auto min-h-12 px-4 py-2.5 text-sm sm:px-6 sm:py-3 md:mt-8">
       <a
-        href="https://cinequick.myportfolio.com/"
+        href={PORTFOLIO_URL}
         target="_blank"
         rel="noopener noreferrer"
       >

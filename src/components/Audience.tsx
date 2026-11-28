@@ -4,6 +4,7 @@ import brandImg from '@/assets/services/brand-ads.jpg';
 import corporateImg from '@/assets/services/corporate.jpg';
 import reelsImg from '@/assets/services/reels.jpg';
 import weddingImg from '@/assets/services/wedding.jpg';
+import { PORTFOLIO_URL } from '@/lib/links';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -36,15 +37,19 @@ const Audience = () => (
         transition={{ staggerChildren: 0.14 }}
       >
         {items.map((it) => (
-          <motion.article
+          <motion.a
             key={it.title}
+            href={PORTFOLIO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${it.title} — explore our works`}
             variants={{
               hidden: { opacity: 0, y: 44, scale: 0.96 },
               show: { opacity: 1, y: 0, scale: 1 },
             }}
             transition={{ duration: 0.85, ease: EASE }}
             whileHover={{ y: -8 }}
-            className="group relative h-72 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl transition-colors duration-500 hover:border-primary/60"
+            className="group relative block h-72 cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl transition-colors duration-500 hover:border-cta-orange/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange"
           >
             <img
               src={it.img}
@@ -61,7 +66,7 @@ const Audience = () => (
               <h3 className="font-display text-3xl">{it.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{it.text}</p>
             </div>
-          </motion.article>
+          </motion.a>
         ))}
       </motion.div>
     </div>
