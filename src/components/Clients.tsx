@@ -36,16 +36,16 @@ const Clients = () => {
 
       {/* Scrolling Logos */}
       <div className="scroll-container">
-        <div className="scroll-track">
+        <div className="scroll-track gap-3 sm:gap-4 md:gap-12">
           {duplicatedLogos.map((client, index) => (
             <div
               key={`${client.name}-${index}`}
-              className="flex-shrink-0 w-48 h-24 rounded-lg bg-secondary/30 border border-border/50 flex items-center justify-center hover:border-primary/50 transition-colors px-4"
+              className="flex-shrink-0 w-20 h-12 px-2 sm:w-24 sm:h-14 md:w-48 md:h-24 md:px-4 rounded-lg bg-secondary/30 border border-border/50 flex items-center justify-center hover:border-primary/50 transition-colors"
             >
               <img
                 src={client.src}
                 alt={client.name}
-                className="max-w-full max-h-16 object-contain opacity-90 hover:opacity-100 transition-opacity"
+                className="max-w-full max-h-8 sm:max-h-10 md:max-h-16 object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}
