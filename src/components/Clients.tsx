@@ -40,12 +40,12 @@ const Clients = () => {
           {duplicatedLogos.map((client, index) => (
             <div
               key={`${client.name}-${index}`}
-              className="flex-shrink-0 w-20 h-12 px-2 sm:w-24 sm:h-14 md:w-48 md:h-24 md:px-4 rounded-lg bg-secondary/30 border border-border/50 flex items-center justify-center hover:border-primary/50 transition-colors"
+              className="flex-shrink-0 w-28 h-16 px-3 sm:w-32 sm:h-16 md:w-48 md:h-24 md:px-4 rounded-lg bg-secondary/30 border border-border/50 flex items-center justify-center hover:border-primary/50 transition-colors"
             >
               <img
                 src={client.src}
                 alt={client.name}
-                className="max-w-full max-h-8 sm:max-h-10 md:max-h-16 object-contain opacity-90 hover:opacity-100 transition-opacity"
+                className="max-w-full max-h-10 sm:max-h-11 md:max-h-16 object-contain opacity-90 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}

@@ -80,7 +80,7 @@ const FullLengthEnquiry = () => (
         href={wa("Hi! I'd like to discuss a full-length video project. Here are my requirements:")}
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-outline-cine inline-flex w-full shrink-0 md:w-auto"
+        className="btn-outline-cine inline-flex min-h-12 w-full shrink-0 px-4 text-center text-sm sm:px-6 sm:text-base md:w-auto"
       >
         <WhatsAppIcon className="h-5 w-5" />
         Discuss Your Requirements on WhatsApp
