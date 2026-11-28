@@ -1,5 +1,9 @@
 # Roadmap
 
+- [x] Replace the header pricing button with a cinematic hamburger menu
+- [x] Verify work, pricing, contact, dismissal, and mobile navigation
+- [x] Recheck the reported mobile hook error
+
 - [x] Verify explicit React hook imports resolve the reported module-global error
 - [x] Remove the header WhatsApp button and restyle the hero work button without changing its destination
 - [x] Verify the homepage controls on desktop and mobile
