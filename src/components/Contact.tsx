@@ -1,5 +1,6 @@
-import { Mail, Instagram, Youtube, Facebook, MapPin } from 'lucide-react';
+import { Mail, Instagram, Youtube, MapPin } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { INSTAGRAM_URL, YOUTUBE_URL } from '@/lib/links';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
 
@@ -49,7 +50,7 @@ const Contact = () => {
           {/* Social Links */}
           <div className="flex items-center justify-center gap-6">
             <a
-              href="#"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -58,22 +59,13 @@ const Contact = () => {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href={YOUTUBE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label="YouTube"
             >
               <Youtube className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-5 h-5" />
             </a>
           </div>
         </div>

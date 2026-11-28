@@ -1,5 +1,6 @@
-import { Instagram, Youtube, Facebook, ChevronUp } from 'lucide-react';
+import { Instagram, Youtube, ChevronUp } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { INSTAGRAM_URL, YOUTUBE_URL } from '@/lib/links';
 import footerLogo from '@/assets/footer-logo.png';
 
 const WHATSAPP_LINK = 'https://wa.me/919493668321';
@@ -61,7 +62,7 @@ const Footer = () => {
             <h4 className="font-display text-xl text-foreground mb-4">CONNECT</h4>
             <div className="flex gap-4 mb-6">
               <a
-                href="#"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -70,22 +71,13 @@ const Footer = () => {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href={YOUTUBE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
               </a>
             </div>
             <a
