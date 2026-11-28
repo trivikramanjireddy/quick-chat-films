@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import WhatsAppIcon from './WhatsAppIcon';
 import headerLogo from '@/assets/header-logo.png';
-
-const WHATSAPP_LINK = 'https://wa.me/919493668321?text=Hi%20CineQuick!%20I%27d%20like%20to%20discuss%20a%20video%20project.';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,17 +53,6 @@ const Header = () => {
               </Link>
             )}
 
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-hero whitespace-nowrap px-4 py-2.5 text-sm sm:px-6 sm:py-3"
-              aria-label="Chat with CineQuick on WhatsApp"
-            >
-              <WhatsAppIcon className="h-4 w-4" />
-              <span className="hidden sm:inline">WhatsApp Us</span>
-              <span className="sm:hidden">WhatsApp</span>
-            </a>
           </div>
         </div>
       </div>

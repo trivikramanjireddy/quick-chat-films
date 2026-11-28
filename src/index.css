@@ -63,6 +63,7 @@
 
     /* Shadows */
     --shadow-glow: 0 0 30px hsla(25, 100%, 50%, 0.3);
+    --shadow-glow-hover: 0 0 50px hsl(var(--primary) / 0.5);
     --shadow-card: 0 10px 40px hsla(0, 0%, 0%, 0.5);
 
     /* Sidebar (keeping defaults) */

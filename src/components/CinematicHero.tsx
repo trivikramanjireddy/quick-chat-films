@@ -1,3 +1,5 @@
+import { CirclePlay } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import alluArjunAsset from '@/assets/hero-collage/AlluArjun.webp.asset.json';
 import hanumanMakingAsset from '@/assets/hero-collage/Hanuman_Making.webp.asset.json';
 import editingAsset from '@/assets/hero-collage/IMG_5522_Original.jpg.asset.json';
@@ -138,15 +140,16 @@ const CinematicHero = () => (
           ))}
         </span>
       </h1>
+      <Button asChild variant="cinematic" className="mt-7 h-auto min-h-12 px-4 py-2.5 text-sm sm:px-6 sm:py-3 md:mt-8">
       <a
         href="https://cinequick.myportfolio.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="group mt-7 inline-flex min-h-12 items-center justify-center gap-2 border border-cta-orange px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-primary transition-all duration-300 hover:bg-cta-orange hover:text-primary-foreground hover:shadow-[var(--shadow-glow)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta-orange focus-visible:ring-offset-2 focus-visible:ring-offset-background md:mt-8 md:px-8 md:py-4"
       >
-        EXPLORE OUR WORKS
-        <span className="text-primary transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary-foreground" aria-hidden="true">→</span>
+        <CirclePlay aria-hidden="true" />
+        Explore Our Works
       </a>
+      </Button>
     </div>
   </section>
 );
